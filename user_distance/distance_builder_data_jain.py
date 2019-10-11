@@ -2,11 +2,8 @@
 #-*- coding: utf-8 -*-
 #
 # data reference : R. A. Fisher (1936). "The use of multiple measurements in taxonomic problems"
-
-from distance_builder import *
-from distance import *
-
-import numpy as np
+from user_distance.distance import SqrtDistance
+from user_distance.distance_builder import *
 
 if __name__ == '__main__':
   builder = DistanceBuilder()

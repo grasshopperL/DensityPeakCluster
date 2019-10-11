@@ -3,7 +3,8 @@
 
 from math import sqrt
 from abc import ABCMeta, abstractmethod
-from error_wrongvec import WrongVecError
+from user_exception.error_wrongvec import WrongVecError
+import functools
 
 import numpy as np
 import numpy.linalg as linalg
@@ -60,7 +61,7 @@ class PearsonDistance(Distance):
     sqrt1, sqrt2 = (sqrt(sum([pow(item, 2) for item in v1])), sqrt(sum([pow(item, 2) for item in v2])))
     if sqrt1*sqrt2 == 0:
       return 1
-    return - reduce(lambda n,m:n+m, [i*j for i,j in zip(v1, v2)]) \
+    return - functools.reduce(lambda n,m:n+m, [i*j for i,j in zip(v1, v2)]) \
            /  (sqrt1*sqrt2)
   
   def _avg(self, vec):

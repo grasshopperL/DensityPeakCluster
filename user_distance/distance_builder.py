@@ -5,6 +5,7 @@ from distance import *
 
 import numpy as np
 
+
 class DistanceBuilder(object):
 
   """
@@ -23,7 +24,7 @@ class DistanceBuilder(object):
     '''
     with open(filename, 'r') as fp:
       for line in fp:
-        self.vectors.append(np.array(map(float, line.split('\t')[:-1]), dtype = np.float32))
+        self.vectors.append(np.array(list(line.split('\t')[:-1]), dtype = np.float32))
     self.vectors = np.array(self.vectors, dtype = np.float32)
 
 
@@ -36,8 +37,8 @@ class DistanceBuilder(object):
         filename     : file to save the result for cluster
     '''
     fo = open(filename, 'w')
-    for i in xrange(len(self.vectors) - 1):
-      for j in xrange(i, len(self.vectors)):
+    for i in range(len(self.vectors) - 1):
+      for j in range(i, len(self.vectors)):
         fo.write(str(i + 1) + ' ' + str(j + 1) + ' ' + str(distance_obj.distance(self.vectors[i], self.vectors[j])) + '\n')
     fo.close()
 #end DistanceBuilder
