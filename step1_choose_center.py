@@ -14,7 +14,7 @@ def plot(data, auto_select_dc = False):
 
 if __name__ == '__main__':
 	#plot('./data/data_in_paper/example_distances.dat')
-	#plot('./data/data_others/spiral_distance.dat')
+	plot('./data/data_others/spiral_distance.dat')
 	#plot('./data/data_others/aggregation_distance.dat')
 	#plot('./data/data_others/flame_distance.dat')
-	plot('./data/data_others/jain_distance.dat')
+	#plot('./data/data_others/jain_distance.dat')
